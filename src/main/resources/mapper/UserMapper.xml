@@ -6,4 +6,8 @@
     <select id="findAll" resultType="com.example.demo.entity.User">
         SELECT * FROM user
     </select>
+
+    <select id="validUser" parameterType="java.lang.String" resultType="com.example.demo.entity.User">
+        select * from user where name = #{userName} and password = #{password}
+    </select>
 </mapper>

@@ -3,7 +3,8 @@ package com.example.demo.entity;
 public class User {
     private int id;
     private String name;
-    private int age;
+    private String pwd;
+
     private String email;
 
     public int getId() {
@@ -22,12 +23,12 @@ public class User {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public String getPwd() {
+        return pwd;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
     public String getEmail() {
@@ -38,10 +39,10 @@ public class User {
         this.email = email;
     }
 
-    public User(int id, String name, int age, String email) {
+    public User(int id, String name, String pwd, String email) {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.pwd = pwd;
         this.email = email;
     }
 }
