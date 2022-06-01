@@ -10,4 +10,41 @@
     <select id="validUser" parameterType="java.lang.String" resultType="com.example.demo.entity.User">
         select * from user where name = #{userName} and password = #{password}
     </select>
+
+    <select id="hasUser" parameterType="java.lang.String" resultType="com.example.demo.entity.User">
+        select * from user where name = #{userName}
+    </select>
+
+<!--    <insert id="register" parameterType="com.example.demo.entity.User">-->
+<!--        insert into user values(#{id},#{name},#{password},#{email})-->
+<!--    </insert>-->
+
+    <insert id="register2" parameterType="com.example.demo.entity.User">
+        insert into user(id, name, password, email) values(#{id},#{userName},#{password},#{email})
+    </insert>
+
+    <delete id="delUser" parameterType="java.lang.String">
+        delete from user where name = #{userName}
+    </delete>
+    <!--批量删除-->
+<!--    <delete id="deleteLanguageBatch">-->
+<!--        delete from user where-->
+<!--        <foreach collection="list" item="userName" separator="or">-->
+<!--            name=#{userName}-->
+<!--        </foreach>-->
+<!--    </delete>-->
+
+    <update id="updateUser" parameterType="com.example.demo.entity.User">
+        update user set name=#{userName}, password=#{password}, email=#{email} where id = #{id}
+    </update>
+    <!--批量更新-->
+    <!--    <update id="updateUser" parameterType="list">-->
+    <!--        <foreach collection="list" item="userName">-->
+    <!--            update user set-->
+    <!--            id = #{userName},-->
+    <!--            userName = #{userName}-->
+    <!--            where 1=1 and userName = #{userName};-->
+    <!--        </foreach>-->
+    <!--    </update>-->
+
 </mapper>

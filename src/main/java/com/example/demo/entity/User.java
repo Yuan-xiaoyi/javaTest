@@ -1,17 +1,17 @@
 package com.example.demo.entity;
 
 public class User {
-    private int id;
+    private Long id;
     private String name;
-    private String pwd;
+    private String password;
 
     private String email;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -23,12 +23,12 @@ public class User {
         this.name = name;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -39,10 +39,14 @@ public class User {
         this.email = email;
     }
 
-    public User(int id, String name, String pwd, String email) {
+    public User(Long id, String name, String password, String email) {
         this.id = id;
         this.name = name;
-        this.pwd = pwd;
+        this.password = password;
         this.email = email;
+    }
+
+    public User(){
+
     }
 }
