@@ -8,34 +8,40 @@
     </select>
 
     <select id="validUser" parameterType="java.lang.String" resultType="com.example.demo.entity.User">
-        select * from user where name = #{userName} and password = #{password}
+        select * from user where userName = #{userName} and password = #{password}
     </select>
 
+
+    <select id="getUserInfo" parameterType="java.lang.Long" resultType="com.example.demo.entity.User">
+        select * from user where id = #{id}
+    </select>
+
+
     <select id="hasUser" parameterType="java.lang.String" resultType="com.example.demo.entity.User">
-        select * from user where name = #{userName}
+        select * from user where userName = #{userName}
     </select>
 
 <!--    <insert id="register" parameterType="com.example.demo.entity.User">-->
-<!--        insert into user values(#{id},#{name},#{password},#{email})-->
+<!--        insert into user values(#{id},#{userName},#{password},#{email})-->
 <!--    </insert>-->
 
     <insert id="register2" parameterType="com.example.demo.entity.User">
-        insert into user(id, name, password, email) values(#{id},#{userName},#{password},#{email})
+        insert into user(id, userName, password, email) values(#{id},#{userName},#{password},#{email})
     </insert>
 
     <delete id="delUser" parameterType="java.lang.String">
-        delete from user where name = #{userName}
+        delete from user where userName = #{userName}
     </delete>
     <!--批量删除-->
 <!--    <delete id="deleteLanguageBatch">-->
 <!--        delete from user where-->
 <!--        <foreach collection="list" item="userName" separator="or">-->
-<!--            name=#{userName}-->
+<!--            userName=#{userName}-->
 <!--        </foreach>-->
 <!--    </delete>-->
 
     <update id="updateUser" parameterType="com.example.demo.entity.User">
-        update user set name=#{userName}, password=#{password}, email=#{email} where id = #{id}
+        update user set userName=#{userName}, password=#{password}, email=#{email} where id = #{id}
     </update>
     <!--批量更新-->
     <!--    <update id="updateUser" parameterType="list">-->

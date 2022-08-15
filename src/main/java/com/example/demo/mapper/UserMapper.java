@@ -12,6 +12,8 @@ public interface UserMapper {
 
     User validUser(String userName,String password);
 
+    User getUserInfo(Long id);
+
     User hasUser(String userName);
 
     Integer register(User user);

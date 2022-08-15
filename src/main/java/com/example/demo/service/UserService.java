@@ -24,9 +24,14 @@ public class UserService {
         return user;
     }
 
-    public boolean hasUser(String userName){
+    public User getUserInfo(Long id){
+        User user = userMapper.getUserInfo(id);
+        return user;
+    }
+
+    public User hasUser(String userName){
         User user = userMapper.hasUser(userName);
-        return Objects.nonNull(user);
+        return user;
     }
     public boolean register2(long id,String userName,String password, String email){
         Integer res = userMapper.register2(id, userName, password, email);
