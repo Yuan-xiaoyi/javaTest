@@ -7,6 +7,13 @@
         SELECT * FROM user
     </select>
 
+    <select id="findSearch" resultType="com.example.demo.entity.User">
+        SELECT * FROM user where 1=1
+            <if test="userName != null and as == '我的'">
+                and userName like concat('%', concat(#{userName}, '%'))
+            </if>
+    </select>
+
     <select id="validUser" parameterType="java.lang.String" resultType="com.example.demo.entity.User">
         select * from user where userName = #{userName} and password = #{password}
     </select>

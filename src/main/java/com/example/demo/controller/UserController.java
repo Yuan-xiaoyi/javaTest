@@ -23,6 +23,10 @@ public class UserController {
     public List<User> getUsers(){
         return userService.findAll();
     }
+    @RequestMapping(value = "/getUsers2")
+    public List<User> getUsers2(@RequestBody(required = false) String userName){
+        return userService.findSearch(userName);
+    }
 
 //    @RequestMapping(value = "/validUser") // 获取前端调接口传过来的数据
 //    public HashMap<String,Object> login(@Context HttpServletRequest request) {
@@ -92,6 +96,7 @@ public class UserController {
 //                    result.put("code", 200);
 //                    result.put("msg", "注册成功！");
 //                }
+
                 long id = System.currentTimeMillis();
                 if(userService.register2(id,userName,password,email)) {
                     User user = userService.validUser(userName,password);

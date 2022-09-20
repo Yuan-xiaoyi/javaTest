@@ -19,6 +19,10 @@ public class UserService {
         return userMapper.findAll();
     }
 
+    public List<User> findSearch(String userName){
+        return userMapper.findSearch(userName);
+    }
+
     public User validUser(String userName,String password){
         User user = userMapper.validUser(userName, password);
         return user;
